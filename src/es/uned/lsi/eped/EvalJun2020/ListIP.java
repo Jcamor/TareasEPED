@@ -2,12 +2,12 @@ package es.uned.lsi.eped.EvalJun2020;
 
 public class ListIP<E> extends SequenceDL<E> implements ListIPIF<E> {
 
-	private NodeSequence pointer;
+	private int posicion=1;
 
 	/* Constructor por defecto: crea una lista vacía */
 	public ListIP() {
 		super();
-		//pointer;
+		new NodeSequence();
 	}
 
 	/*
@@ -19,7 +19,16 @@ public class ListIP<E> extends SequenceDL<E> implements ListIPIF<E> {
 
 	/* Devuelve la posición actual del puntero entre 1 y size()+1 */
 	public int getPointer() {
-		return pointer.getPosicion();
+	
+		return posicion;
+	}
+
+	public int getPosicion() {
+		return posicion;
+	}
+
+	public void setPosicion(int posicion) {
+		this.posicion = posicion;
 	}
 
 	/*
@@ -31,7 +40,7 @@ public class ListIP<E> extends SequenceDL<E> implements ListIPIF<E> {
 	 */
 	public void moveNext() {
 		if (1 <= getPointer() && getPointer() <= size()) {
-			pointer.setPosicion(getPointer() + 1);
+			posicion = posicion + 1;
 		}
 
 	}
@@ -45,7 +54,7 @@ public class ListIP<E> extends SequenceDL<E> implements ListIPIF<E> {
 	 */
 	public void movePrev() {
 		if (1 < getPointer() && getPointer() <= (size() + 1)) {
-			pointer.setPosicion(getPointer() - 1);
+			posicion = posicion - 1;
 		}
 	}
 
@@ -60,7 +69,7 @@ public class ListIP<E> extends SequenceDL<E> implements ListIPIF<E> {
 	 */
 	public void moveTo(int pos) {
 		if (1 <= pos && pos <= (size() + 1)) {
-			pointer.setPosicion(pos);
+			posicion = pos;
 		}
 
 	}
@@ -120,7 +129,7 @@ public class ListIP<E> extends SequenceDL<E> implements ListIPIF<E> {
 	 */
 	public E getElem() {
 		NodeSequence node = getNode(getPointer());
-		return node.getValue(); 
+		return node.getValue();
 	}
 
 	/*

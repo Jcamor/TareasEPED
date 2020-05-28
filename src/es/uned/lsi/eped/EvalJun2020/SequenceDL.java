@@ -9,29 +9,18 @@ public abstract class SequenceDL<E> extends Collection<E> implements SequenceDLI
 		private E value;
 		private NodeSequence next;
 		private NodeSequence pre;
-		private int posicion;
+		//private int posicion;
 		
 		NodeSequence(){
 			this.value = null;
 			this.next = null;
 			this.pre = null;
-			this.posicion=1;
 		}
 		
 		NodeSequence(E e){
 			this.value = e;
 			this.next = null;
 			this.pre = null;
-			this.posicion = 1;
-		}
-		
-				
-		public int getPosicion() {
-			return posicion;
-		}
-
-		public void setPosicion(int posicion) {
-			this.posicion = posicion;
 		}
 
 		public E getValue(){
