@@ -4,52 +4,57 @@ import es.uned.lsi.eped.DataStructures.IteratorIF;
 import es.uned.lsi.eped.DataStructures.StackIF;
 
 public class StackDeque<E> implements StackIF<E> {
+	private DequeIF<E> bicola = new Deque<E>();
+	
+	public StackDeque() {
+		super();
+//		DequeIF<E> bicola = new Deque<E>();
+	}
 
-	@Override
 	public IteratorIF<E> iterator() {
-		// TODO Auto-generated method stub
-		return null;
+	
+		return bicola.iterator();
 	}
 
-	@Override
+
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+	
+		return bicola.size();
 	}
 
-	@Override
+	
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+	
+		return bicola.isEmpty();
 	}
 
-	@Override
+	
 	public boolean contains(E e) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		return bicola.contains(e);
 	}
 
-	@Override
+	
 	public void clear() {
-		// TODO Auto-generated method stub
-
+	
+		bicola.clear();
 	}
 
-	@Override
+	/* Devuelve el elemento en la cima de la pila */
 	public E getTop() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return bicola.getFront();
 	}
 
-	@Override
+	/* Añade un nuevo elemento a la cima de la pila */
 	public void push(E elem) {
-		// TODO Auto-generated method stub
+		bicola.insertFront(elem);
 
 	}
 
-	@Override
+	/* Elimina el elemento situado en la cima de la pila */
 	public void pop() {
-		// TODO Auto-generated method stub
+		bicola.removeFront();
 
 	}
 
